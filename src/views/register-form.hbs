@@ -1,0 +1,50 @@
+{{> navbar}}
+
+
+
+<div class="container mt-3">
+
+
+<div class="row">
+                <div class="col-2"></div>
+
+                <div class="col-8">
+<header class="my-5">
+  <h1>
+    {{#if id}}
+     <center>¡Actualiza tus datos!</center>    <!--"{{firstName}}" "{{lastName}}" ({{id}})  -->
+    {{else}}
+      <center>¡Crear un nuevo registro!</center>
+    {{/if}}
+  </h1>
+</header>
+  <!--
+    Este formulario se usará tanto para edición como creación, este if nos dice que si viene un id, entonces será un update, si no, será un create.
+    Para el action, si viene un id será un post a /articles/:id/update, si no, será un post a /articles/create.
+  -->
+
+<p></p>
+
+    <form action="/register/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+    <div class="mb-3">
+      <label for="firstName" class="form-label"><b>Nombre</b></label>
+      <input type="text" class="form-control" name="firstName" aria-describedby="firstNameHelp" required="true" value="{{firstName}}">
+
+    </div>
+     <div class="mb-3">
+      <label for="lastName" class="form-label"><b>Apellido</b></label>
+      <input type="text" class="form-control" name="lastName" aria-describedby="lastNameHelp" required="true" value="{{lastName}}">
+
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label"><b>E-mail</b></label>
+      <input type="text" class="form-control" name="email" aria-describedby="emailHelp" required="true" value="{{email}}">
+
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>

@@ -1,0 +1,107 @@
+{{> navbar}}
+
+
+<div class="container mt-3">
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-6">
+    <header class="my-5">
+  <div class="alert alert-secondary" role="alert">
+    <h1><center>¡Regístrate con nosotros!</center></h1>
+    <p>
+    </p>    
+</div>
+</header>
+<hr>
+</div>
+</div>
+
+
+
+
+<div class="row">
+                <div class="col-2"></div>
+
+                <div class="col-8">
+
+  
+
+  <div class="container">
+
+<a href="/register/create" class="btn btn-outline-primary mt-4"><i class='bx bxs-plus-circle bx-tada bx-md' ></i></a>
+
+  </div>
+
+  <p></p>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Registros creados
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    
+
+{{#each registers}}
+
+
+<table class="table table-striped">
+  
+<thead >
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>E-mail</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+
+
+ 
+
+  <tbody>
+    <tr>
+      <td>{{this.firstName}}</td>
+      <td>{{this.lastName}}</td>
+      <td>{{this.email}}</td>
+      <td>
+        <a href="/register/{{id}}/update">
+      <button class="btn btn-primary btn-sm"><i class='bx bxs-edit '></i></button></a>
+      </td>
+            <td>
+      <a href="/register/{{this.id}}" class="btn btn-success btn-sm"><i class='bx bx-list-plus'></i></i></a>
+    </td>
+      <td>
+        <form action="/register/{{id}}/delete" method="POST">
+      <button type="submit" class="btn btn-danger btn-sm"><i class='bx bx-trash '></i></button>
+    </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ {{/each}}
+
+
+  </ul>
+</div>
+
+ 
+</div>
+            </div>
+
+</div>
+
+    
+
+
+
+
+
+
+
+            
+
+
