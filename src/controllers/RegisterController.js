@@ -1,4 +1,4 @@
-const RegistersDAO = require('../models/dao/RegistersDao')
+const RegistersDAO = require('../models/dao/RegistersDAO')
 
 class RegisterController {
   constructor (db) {
