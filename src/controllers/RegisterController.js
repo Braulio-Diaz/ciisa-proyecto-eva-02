@@ -89,9 +89,9 @@ class RegisterController {
 
   async updateAndRenderRegister (req, res) {
     const id = req.params.id
-    const firstName = req.params.firstName
-    const lastName = req.params.lastName
-    const email = req.params.email
+    const firstName = req.body.firstName
+    const lastName = req.body.lastName
+    const email = req.body.email
 
     try {
       const register = { firstName, lastName, email, id }
